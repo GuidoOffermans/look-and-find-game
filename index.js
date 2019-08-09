@@ -1,11 +1,16 @@
 const images = [  
   { name: 'spaceship', 
-    src: 'https://i.ytimg.com/vi/vzLeq2pRgIY/maxresdefault.jpg'
+    src: 'http://www.pngmart.com/files/3/Spaceship-PNG-Transparent-Image.png'
    },
    { name: 'car', 
-    src: 'https://images-na.ssl-images-amazon.com/images/I/91FibnTnD8L._SY355_.png'
+    src: 'http://www.pngmart.com/files/3/Spaceship-PNG-Photos.png'
+  },
+  { name: 'spaceship', 
+    src: 'http://www.pngmart.com/files/3/Spaceship-PNG-File.png'
    },
+   
 ];
+
 
 
 const getRandomInt = (max) => {
@@ -17,11 +22,12 @@ for(let i = 0; i < images.length; i++) {
   const img = document.createElement('img')
   img.alt = images[i].name
   img.src = images[i].src;
-  img.style = 'height: 100px; position: absolute;'
+  img.style = 'height: 100px; position: absolute; margin: 10px;'
   img.style.bottom = getRandomInt(30).toString() + 'rem';
   img.style.left= getRandomInt(60).toString() + 'rem';
-  img.onclick = function(){addToFoundItems(images[i])};
-
+  img.onclick = function(){addToFoundItems(images[i]);
+    this.style.display='none';
+  };
   main.appendChild(img)
 }
 
@@ -49,11 +55,19 @@ const displayInFooter = () => {
       img.src = foundItems[i].src;
       img.style = 'height: 100px; margin:10px;'
       foundItemsSection.appendChild(img)
+      
+  }
+  if (foundItems.length === images.length) {
+    setTimeout(function(){ alert("job well done!"); }, 100);
+    
   }
 }
 
-
-
+let userName = prompt("Please enter your name")
+if (userName != null) {
+  document.getElementById("user").innerHTML =
+  userName[0].toUpperCase() + userName.slice(1) + "'s   Items";
+}
 
 
 
