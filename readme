@@ -1,0 +1,5 @@
+create an html page. the full page should be covered by a background image, you css should be in a seperate file.
+
+create a main element this element will be empty for now. main should have an id of searchField, a width of 100% and a height of 80vh. the position should be relative.
+
+create a footer. the footer should contain an <h1> with the content items and a <div> with an id "foundItems". make sure it is heigh enough to connect to the main element.
