@@ -65,12 +65,18 @@ table {
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-
 footer {
   display: flex;
-  justify-content: center;
-  height: 100%;
+  align-items: center;
+  height: 20vh;
+  flex-direction: column;
+  background: black;
+}
+#foundItems {
+  display: flex;
+  
 }
 footer h1 {
   font-size: 2rem;
+  color: white;
 }
