@@ -9,13 +9,21 @@ const images = [
 
 
 const getRandomInt = (max) => {
-   return Math.floor(Math.random() * max)
-  // console.log(currentPicture)
-  // console.log(images[currentPicture])
-  
+   return Math.floor(Math.random() * max)  
 }
 
-getRandomInt();
+const foundItems = [];
+console.log(foundItems)
+
+const addToFoundItems = (image) => {
+  
+  if(!foundItems.includes(image)){
+    foundItems.push(image)
+    return console.log(foundItems)
+  }
+  console.log('allready in')
+  return null
+}
 
 for(let i = 0; i < images.length; i++) {
   const main = document.getElementById('searchField')
@@ -26,13 +34,10 @@ for(let i = 0; i < images.length; i++) {
   img.style = 'height: 50px; position: absolute;'
   img.style.bottom = getRandomInt(30).toString() + 'rem';
   img.style.left= getRandomInt(60).toString() + 'rem';
+  img.onclick = function(){addToFoundItems(images[i])};
 
   main.appendChild(img)
-  console.log(main)
-  
 }
-
-
 
 
 
