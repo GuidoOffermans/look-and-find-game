@@ -28,6 +28,7 @@ for(let i = 0; i < images.length; i++) {
   img.onclick = function(){addToFoundItems(images[i]);
     this.style.display='none';
   };
+
   main.appendChild(img)
 }
 
